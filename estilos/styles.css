@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');/*Importa font*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');/*Importa font*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22D4FD;
+    --cor-rouver: #272727;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {/*reset do css de formaa que zere os valores para serem melhor trablhados(O elemento * selecinatodas as tags)*/
+    margin: 0;
+    padding: 0;/*Cria um espaço entre o conteudo e as bordas*/
+}
+
+body {
+    /*height: 100vh;/*ocupa a tela inteira do naavegador com  pagina*/
+    box-sizing: border-box;/*faz com que o elemento filhos do body não saia do elemento pai(é uma boa pratica)*/
+    background: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link{
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-secundaria);/*usa fonte dentro do conteudo da classe*/
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.titulo-destaque {/*classe para alterar apenas a fonte de um elemento*/
+    color: #ff8c00;
+}
+
+.apresentacao{/*classe para mudar o main*/
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;/* justifica o elemento de forma que cada um tenha a maior distancia na horizontal*/
+    gap: 82px;
+}
+
+.apresentacao__conteudo{/*classe para separa a imagem do conteudo escrito*/
+    width: 50%;
+    display: flex;/*Import o flexbox para utilizar na seção que quer*/
+    flex-direction: column;/*Orgaaniza os elementos em coluna*/
+    gap: 40px;/*espaça os elementos dentro da seção, no caso os elementos filho*/
+}
+
+.apresentacao__conteudo__titulo{/*classe para alterar apenas o titulo que esta no conteudo*/
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);/*usa fonte dentro do conteudo da classe*/
+}
+
+.apresentacao__conteudo__texto{/*classe para alterar apenas o texto contido no conteudo*/
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);/*usa fonte dentro do conteudo da classe*/
+}
+
+.apresentacao__links__subtitulo{
+    font-size: 1.5rem;
+    font-family: var(--fonte-primaria);/*usa fonte dentro do conteudo da classe*/
+    font-weight: 400;
+}
+
+.apresentacao__links{
+    display: flex;
+    flex-direction: column;/*Orgaaniza os elementos em coluna*/
+    align-items: center;/*Centraliza os itens contidos na classe, como estão em coluna ira alinhar diferente*/
+    justify-content: space-between;
+    gap: 32px;
+}
+.apresentacao__links__navegacao{/*classe para os doiss botões no div*/
+    /*background-color: #ff8c00;/*da cor ao fundo do botão*/
+    display: flex;
+    justify-content: center;/*Coloca no centro o conteudo do botão utilizando flexbox*/
+    gap: 16px;/*Distancia a imagem do que essta escrito no botão*/
+    border: 2px solid var(--cor-terciaria);
+    width: 50%;
+    text-align: center;/*alinha o texto no botão*/
+    border-radius: 8px;/*altera o arredondmento dos botões*/
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0;/*distancia em altura do texto a borda do botão*/
+    text-decoration: none;/*tira o ssublinhado de links*/
+    color: var(--cor-secundaria);
+    font-family: 'Montserrat', sans-serif;/*usa fonte dentro do conteudo da classe*/
+}
+.apresentacao__links__link:hover{/*Classe para mudar o botão quando passar o mouse encima*/
+    background-color: var(--cor-rouver);
+}
+
+.apresentacao__imagem{
+    width: 50%;
+}
+
+.rodape{
+    padding: 24px;/*Cria a borda para o rodape*/
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);/*usa fonte dentro do conteudo da classe*/
+    font-weight: 400;
+}
+
+@media (max-width: 1200px){
+    .cabecalho{
+        padding: 6%;
+    }
+
+    .cabecalho__menu{
+        justify-content: center;
+    }
+    
+    .apresentacao{
+        flex-direction: column-reverse;/*Quando em telas menores, ira jogar a imagem para cima.*/
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo{
+        width: auto;/*indica para o conteudo cobrir a maior area possivel.*/
+    }
+}
